@@ -1,0 +1,113 @@
+{
+  "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_petId",
+          "type": "uint256"
+        }
+      ],
+      "name": "adopt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "adopters",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAdopters",
+      "outputs": [
+        {
+          "internalType": "address[16]",
+          "name": "",
+          "type": "address[16]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x25a2923666a0b4a8b62bfaab879bf1be16feb7c2147dbc92cd077dd8a969e256",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "transactionIndex": 0,
+    "gasUsed": "181069",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x8e31982a23f01c06d075d8924c67b4299114485ddf5c9d860cb3615f074a09c7",
+    "transactionHash": "0x25a2923666a0b4a8b62bfaab879bf1be16feb7c2147dbc92cd077dd8a969e256",
+    "logs": [],
+    "blockNumber": 1,
+    "cumulativeGasUsed": "181069",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "dab1b5755f7dc5368ef2d279d0109f07",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_petId\",\"type\":\"uint256\"}],\"name\":\"adopt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"adopters\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAdopters\",\"outputs\":[{\"internalType\":\"address[16]\",\"name\":\"\",\"type\":\"address[16]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/PetShop.sol\":\"PetShop\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/PetShop.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity ^0.8.17;\\n\\ncontract PetShop {\\n    address[16] public adopters;\\n\\n    function adopt(uint256 _petId) public returns (uint256) {\\n        require(_petId >= 0 && _petId <= 15, \\\"Invalid ID\\\");\\n\\n        adopters[_petId] = msg.sender;\\n\\n        return _petId;\\n    }\\n\\n    function getAdopters() public view returns (address[16] memory) {\\n        return adopters;\\n    }\\n}\\n\",\"keccak256\":\"0xa0ee918281fe6a187f725b7784f03cf0515e36f75477eebb2aa526d6edfc774e\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610250806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80633de4eb171461004657806343ae80d3146100645780638588b2c51461008f575b600080fd5b61004e6100b0565b60405161005b91906101b0565b60405180910390f35b6100776100723660046101eb565b6100f6565b6040516001600160a01b03909116815260200161005b565b6100a261009d3660046101eb565b610116565b60405190815260200161005b565b6100b8610191565b604080516102008101918290529060009060109082845b81546001600160a01b031681526001909101906020018083116100cf575050505050905090565b6000816010811061010657600080fd5b01546001600160a01b0316905081565b6000600f82111561015a5760405162461bcd60e51b815260206004820152600a602482015269125b9d985b1a5908125160b21b604482015260640160405180910390fd5b336000836010811061016e5761016e610204565b0180546001600160a01b0319166001600160a01b03929092169190911790555090565b6040518061020001604052806010906020820280368337509192915050565b6102008101818360005b60108110156101e25781516001600160a01b03168352602092830192909101906001016101ba565b50505092915050565b6000602082840312156101fd57600080fd5b5035919050565b634e487b7160e01b600052603260045260246000fdfea26469706673582212202eb212be6da54eadeb31852a5121b2f6b124be91a86d03ee3a022db5710c460964736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80633de4eb171461004657806343ae80d3146100645780638588b2c51461008f575b600080fd5b61004e6100b0565b60405161005b91906101b0565b60405180910390f35b6100776100723660046101eb565b6100f6565b6040516001600160a01b03909116815260200161005b565b6100a261009d3660046101eb565b610116565b60405190815260200161005b565b6100b8610191565b604080516102008101918290529060009060109082845b81546001600160a01b031681526001909101906020018083116100cf575050505050905090565b6000816010811061010657600080fd5b01546001600160a01b0316905081565b6000600f82111561015a5760405162461bcd60e51b815260206004820152600a602482015269125b9d985b1a5908125160b21b604482015260640160405180910390fd5b336000836010811061016e5761016e610204565b0180546001600160a01b0319166001600160a01b03929092169190911790555090565b6040518061020001604052806010906020820280368337509192915050565b6102008101818360005b60108110156101e25781516001600160a01b03168352602092830192909101906001016101ba565b50505092915050565b6000602082840312156101fd57600080fd5b5035919050565b634e487b7160e01b600052603260045260246000fdfea26469706673582212202eb212be6da54eadeb31852a5121b2f6b124be91a86d03ee3a022db5710c460964736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 96,
+        "contract": "contracts/PetShop.sol:PetShop",
+        "label": "adopters",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_array(t_address)16_storage"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)16_storage": {
+        "base": "t_address",
+        "encoding": "inplace",
+        "label": "address[16]",
+        "numberOfBytes": "512"
+      }
+    }
+  }
+}
